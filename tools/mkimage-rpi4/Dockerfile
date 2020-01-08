@@ -36,13 +36,12 @@ ENV RPI_COMMIT=dc5622560a2589a417007156b75db71f52b60d80
 RUN mkdir -p /out/boot && \
     cd /out/boot && \
     curl -fsSLO https://github.com/raspberrypi/firmware/raw/$RPI_COMMIT/boot/LICENCE.broadcom && \
-    curl -fsSLO https://github.com/raspberrypi/firmware/raw/$RPI_COMMIT/boot/bootcode.bin && \
-    curl -fsSLO https://github.com/raspberrypi/firmware/raw/$RPI_COMMIT/boot/fixup_cd.dat && \
-    curl -fsSLO https://github.com/raspberrypi/firmware/raw/$RPI_COMMIT/boot/fixup.dat && \
-    curl -fsSLO https://github.com/raspberrypi/firmware/raw/$RPI_COMMIT/boot/fixup_x.dat && \
-    curl -fsSLO https://github.com/raspberrypi/firmware/raw/$RPI_COMMIT/boot/start_cd.elf && \
-    curl -fsSLO https://github.com/raspberrypi/firmware/raw/$RPI_COMMIT/boot/start.elf && \
-    curl -fsSLO https://github.com/raspberrypi/firmware/raw/$RPI_COMMIT/boot/start_x.elf
+    curl -fsSLO https://github.com/raspberrypi/firmware/raw/$RPI_COMMIT/boot/fixup4.dat && \
+    curl -fsSLO https://github.com/raspberrypi/firmware/raw/$RPI_COMMIT/boot/fixup4cd.dat && \
+    curl -fsSLO https://github.com/raspberrypi/firmware/raw/$RPI_COMMIT/boot/fixup4x.dat && \
+    curl -fsSLO https://github.com/raspberrypi/firmware/raw/$RPI_COMMIT/boot/start4.elf && \
+    curl -fsSLO https://github.com/raspberrypi/firmware/raw/$RPI_COMMIT/boot/start4cd.elf && \
+    curl -fsSLO https://github.com/raspberrypi/firmware/raw/$RPI_COMMIT/boot/start4x.elf
 
 FROM scratch
 ENTRYPOINT []
