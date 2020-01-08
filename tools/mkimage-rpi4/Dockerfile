@@ -22,7 +22,7 @@ RUN apk add --no-cache --initdb -p /out \
 RUN rm -rf /out/etc/apk /out/lib/apk /out/var/cache
 
 # u-boot compile. The patch is needed to handle larger kernels
-ENV UBOOT_COMMIT=v2019.04
+ENV UBOOT_COMMIT=v2020.01
 COPY u-boot.patch .
 RUN git clone -b $UBOOT_COMMIT --depth 1 https://github.com/u-boot/u-boot.git
 WORKDIR /u-boot
