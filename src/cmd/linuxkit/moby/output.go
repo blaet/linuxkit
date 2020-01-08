@@ -7,7 +7,6 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
-	"runtime"
 	"strings"
 
 	"github.com/linuxkit/linuxkit/src/cmd/linuxkit/initrd"
@@ -200,9 +199,6 @@ var outFuns = map[string]func(string, io.Reader, int, bool) error{
 		return nil
 	},
 	"rpi3": func(base string, image io.Reader, size int, trust bool) error {
-		if runtime.GOARCH != "arm64" {
-			return fmt.Errorf("Raspberry Pi output currently only supported on arm64")
-		}
 		err := outputRPi3(outputImages["rpi3"], base+".tar", image, trust)
 		if err != nil {
 			return fmt.Errorf("Error writing rpi3 output: %v", err)
