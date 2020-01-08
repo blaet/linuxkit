@@ -32,7 +32,7 @@ RUN make rpi_4_defconfig all && \
     cp tools/mkimage /out/bin
 
 # fetch the Raspberry Pi 4 firmware (latest master)
-ENV RPI_COMMIT=e1900836948f6c6bdf4571da1b966a9085c95d37
+ENV RPI_COMMIT=dc5622560a2589a417007156b75db71f52b60d80
 RUN mkdir -p /out/boot && \
     cd /out/boot && \
     curl -fsSLO https://github.com/raspberrypi/firmware/raw/$RPI_COMMIT/boot/LICENCE.broadcom && \
