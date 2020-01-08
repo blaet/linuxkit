@@ -28,6 +28,7 @@ var (
 		"dynamic-vhd": "linuxkit/mkimage-dynamic-vhd:99b9009ed54a793020d3ce8322a42e0cc06da71a",
 		"vmdk":        "linuxkit/mkimage-vmdk:b55ea46297a16d8a4448ce7f5a2df987a9602b27",
 		"rpi3":        "linuxkit/mkimage-rpi3:9dd4f7735e19e495c2b0a856a52af15141816534",
+		"rpi4":        "blaet/mkimage-rpi4:latest",
 	}
 )
 
@@ -205,6 +206,13 @@ var outFuns = map[string]func(string, io.Reader, int, bool) error{
 		err := outputRPi3(outputImages["rpi3"], base+".tar", image, trust)
 		if err != nil {
 			return fmt.Errorf("Error writing rpi3 output: %v", err)
+		}
+		return nil
+	},
+	"rpi4": func(base string, image io.Reader, size int, trust bool) error {
+		err := outputRPi3(outputImages["rpi4"], base+".tar", image, trust)
+		if err != nil {
+			return fmt.Errorf("Error writing rpi4 output: %v", err)
 		}
 		return nil
 	},
