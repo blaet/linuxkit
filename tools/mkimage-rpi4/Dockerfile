@@ -33,7 +33,7 @@ RUN patch -p 1 < /u-boot.patch && \
     mkdir -p /out/bin && \
     cp tools/mkimage /out/bin
 
-# fetch the Raspberry Pi 3 firmware (latest master)
+# fetch the Raspberry Pi 4 firmware (latest master)
 ENV RPI_COMMIT=e1900836948f6c6bdf4571da1b966a9085c95d37
 RUN mkdir -p /out/boot && \
     cd /out/boot && \
@@ -52,5 +52,5 @@ CMD []
 WORKDIR /
 COPY --from=build /out/ /
 COPY config.txt boot.script /boot/
-COPY make-rpi3 /
-ENTRYPOINT [ "/make-rpi3" ]
+COPY make-rpi4 /
+ENTRYPOINT [ "/make-rpi4" ]
